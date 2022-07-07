@@ -2,8 +2,12 @@ import { useEffect, useState } from 'react';
 import Header from './Component/Header';
 import NavBar from './Component/NavBar'
 import Gallery from './Component/Gallery';
-import SearchBar from './Component/SearchBar';
 import './App.css';
+import InfoView from './Component/InfoView';
+import Container from 'react-bootstrap/esm/Container';
+import Row from 'react-bootstrap/esm/Row';
+import Col from 'react-bootstrap/esm/Col';
+
 
 function App() {
   const [error, setError] = useState(null);
@@ -36,12 +40,14 @@ function App() {
     return <div>Loading...</div>;
   } else {
     return (
-      <div>
+      <Container>
         <Header />
-        <NavBar />
-        <SearchBar />
-        <Gallery pokemon={pokemon} />
-      </div>      
+        <Row className="justify-content-md-center">
+          <Col><InfoView pokemon={pokemon.results} /></Col>
+          <Col><Gallery pokemon={pokemon.results} /></Col>
+        </Row>
+        <NavBar />     
+      </Container>      
     );
   }
 }

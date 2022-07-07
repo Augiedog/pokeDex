@@ -24,7 +24,7 @@ function Gallery(props) {
     
     return (
         <ul>
-            {pokemon.results.map((item, index) => (
+            {pokemon.map((item, index) => (
             <li key={index}>
               {item.name} 
             </li>

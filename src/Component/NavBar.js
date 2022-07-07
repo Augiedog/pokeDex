@@ -5,9 +5,15 @@ import { Container } from 'react-bootstrap'
 
 function NavBar() {
     return (
-        <Navbar bg="light" expand="md">
+        <Navbar bg="dark" variant='dark' expand="md" fixed='bottom' >
             <Container>
-                <Navbar.Brand href="#home">PokeDex</Navbar.Brand>
+                <Navbar.Brand href="#home">
+                    <img 
+                        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/151.png" 
+                        alt="logo" 
+                        width="75px"
+                    />
+                </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
