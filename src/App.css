@@ -4,3 +4,7 @@
 body {
   background-color: red;
 }
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+}

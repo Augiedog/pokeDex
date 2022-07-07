@@ -1,13 +1,15 @@
 import Card from 'react-bootstrap/Card'
+import { useContext } from 'react'
+import { PokeBall } from '../context/PokeBall'
 
 
 function InfoView(props) {
-    const pokemon = props.pokemon
+    const pokemon = useContext(PokeBall)
     console.log(pokemon, 'infoView')
     return (
         <>
             <Card style={{ width: '95%' }}>
-                <Card.Img variant="top" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png" />
+                <Card.Img style={{ width: '250px'}} variant="top" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png" />
                 <Card.Body>
                     <Card.Title>pokemon.name</Card.Title>
                     <Card.Text>

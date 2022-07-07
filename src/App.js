@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { PokeBall } from './context/PokeBall';
 import Header from './Component/Header';
 import NavBar from './Component/NavBar'
 import Gallery from './Component/Gallery';
@@ -13,6 +14,8 @@ function App() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [pokemon, setPokemon] = useState([]);
+  const [poke, setPoke] = useState('')
+  const [pokeBall, setPokeBall] = useState([])
 
   // Note: the empty deps array [] means
   // this useEffect will run once
@@ -32,6 +35,10 @@ function App() {
         })
   }, [])
 
+  useEffect(() => {
+    console.log(poke,"captured url for pokeball")
+  }, poke)
+
 
 
   if (error) {
@@ -41,10 +48,15 @@ function App() {
   } else {
     return (
       <Container>
+        {console.log(pokemon, "everythin")}
         <Header />
         <Row className="justify-content-md-center">
-          <Col><InfoView pokemon={pokemon.results} /></Col>
-          <Col><Gallery pokemon={pokemon.results} /></Col>
+          <Col>
+            <PokeBall.Provider value={pokeBall}>
+              <InfoView />
+            </PokeBall.Provider>
+          </Col>
+          <Col className='gallery'><Gallery pokemon={pokemon.results} setPoke={setPoke} /></Col>
         </Row>
         <NavBar />     
       </Container>      

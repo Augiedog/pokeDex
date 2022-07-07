@@ -1,35 +1,39 @@
 
+
 function Gallery(props) {
     const pokemon = props.pokemon
+    console.log(props, "Gallery props")
+    
 
-    // const detailStyle = {
-    //     'width': '80vw',
-    //     'height': '20vh',
-    //     'border': '1px solid black',
-    //     'margin': '2px',
-    //     'backgroundImage': `url(${pokemon.sprites.front_default})`,
-    //     'backgroundRepeat': 'no-repeat',
-    //     'backgroundSize': 'cover',
-    //     'color': 'blue'
-    // }
-    // const detailView = () => {
-    //     return (
-    //         <div style={detailStyle}>
-    //             <h2>{pokemon.name}</h2>
-    //             <h3>{pokemon.height}</h3>
-                
-    //         </div>
+    const boxedStyle = {
+        'width': '20%',
+        'height': '15vh',
+        'border': '1px solid black',
+        'margin': '2px',
+        'textTransform': 'capitalize',
+        'backgroundColor': 'blue',
+        'color': 'white'
+    }
+   
+    // const gotcha = () => {
+    //   console.log()
+    //   fetch(pokemon.url)
+    //     .then(res => res.json())
+    //     .then(
+    //       (ball) => {
+    //         setPokeBall(ball)
+    //       }
     //     )
     // }
     
     return (
-        <ul>
+        <>
             {pokemon.map((item, index) => (
-            <li key={index}>
-              {item.name} 
-            </li>
-          ))}
-        </ul>
+              <div key={index} style={boxedStyle} onClick={(e) => props.setPoke(item.url)} >
+                <h5>{item.name}</h5> 
+              </div>
+            ))}
+        </>
     )
 }
 export default Gallery

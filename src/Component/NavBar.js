@@ -7,17 +7,17 @@ function NavBar() {
     return (
         <Navbar bg="dark" variant='dark' expand="md" fixed='bottom' >
             <Container>
-                <Navbar.Brand href="#home">
+                <Navbar.Brand href="/">
                     <img 
-                        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/151.png" 
-                        alt="logo" 
+                        src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png"
+                        alt="PokéAPI logo" 
                         width="75px"
                     />
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="me-auto">
-                    <Nav.Link href="#home">Home</Nav.Link>
+                    <Nav.Link href="/">Home</Nav.Link>
                     <Nav.Link href="#link">About</Nav.Link>
                     <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                     <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
