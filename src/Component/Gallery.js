@@ -11,7 +11,7 @@ function Gallery(props) {
         'border': '1px solid black',
         'margin': '2px',
         'textTransform': 'capitalize',
-        'backgroundColor': 'blue',
+        'backgroundColor': '#31A7F1',
         'color': 'white'
     }
    

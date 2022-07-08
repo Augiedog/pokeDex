@@ -9,7 +9,7 @@ function InfoView(props) {
     return (
         <>
             <Card style={{ width: '95%' }}>
-                <Card.Img style={{ width: '250px'}} variant="top" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png" />
+                <Card.Img style={{ width: '250px'}} variant="top" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/94.png" />
                 <Card.Body>
                     <Card.Title>pokemon.name</Card.Title>
                     <Card.Text>
