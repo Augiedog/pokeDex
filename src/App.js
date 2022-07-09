@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { PokeBall } from './context/PokeBall';
+
 import Header from './Component/Header';
 import NavBar from './Component/NavBar'
 import Gallery from './Component/Gallery';
@@ -14,8 +14,20 @@ function App() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [pokemon, setPokemon] = useState([]);
-  const [poke, setPoke] = useState('')
+  const [gotcha, setGotcha] = useState([])
   const [pokeBall, setPokeBall] = useState([])
+
+  // gotcha is the container for the url that after the fetch will fill the setPokeball
+      // const gotcha = () => {
+    //   console.log()
+    //   fetch(pokemon.url)
+    //     .then(res => res.json())
+    //     .then(
+    //       (ball) => {
+    //         setPokeBall(ball)
+    //       }
+    //     )
+    // }
 
   // Note: the empty deps array [] means
   // this useEffect will run once
@@ -35,9 +47,9 @@ function App() {
         })
   }, [])
 
-  useEffect(() => {
-    console.log(poke,"captured url for pokeball")
-  }, poke)
+  // useEffect(() => {
+  //   console.log(gotcha,"captured url for pokeball")
+  // }, gotcha)
 
 
 
@@ -48,15 +60,13 @@ function App() {
   } else {
     return (
       <Container>
-        {console.log(pokemon, "everythin")}
+        {console.log(pokemon, "first data request, APP")}
         <Header />
         <Row className="justify-content-md-center">
           <Col>
-            <PokeBall.Provider value={pokeBall}>
-              <InfoView />
-            </PokeBall.Provider>
+              <InfoView pokeBall={pokeBall}/>
           </Col>
-          <Col className='gallery'><Gallery pokemon={pokemon.results} setPoke={setPoke} /></Col>
+          <Col className='gallery'><Gallery pokemon={pokemon.results} setGotcha={setGotcha} /></Col>
         </Row>
         <NavBar />     
       </Container>      

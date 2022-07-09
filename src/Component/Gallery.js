@@ -15,22 +15,13 @@ function Gallery(props) {
         'color': 'white'
     }
    
-    // const gotcha = () => {
-    //   console.log()
-    //   fetch(pokemon.url)
-    //     .then(res => res.json())
-    //     .then(
-    //       (ball) => {
-    //         setPokeBall(ball)
-    //       }
-    //     )
-    // }
+
     
     return (
         <>
             {pokemon.map((item, index) => (
-              <div key={index} style={boxedStyle} onClick={(e) => props.setPoke(item.url)} >
-                <h5>{item.name}</h5> 
+              <div key={index} style={boxedStyle} onClick={(e) => this.props.setGotcha(item)} >
+                <h5>{item.name}</h5> {console.log(item.url, "pokemon in gallery")}
               </div>
             ))}
         </>
