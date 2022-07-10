@@ -14,20 +14,8 @@ function App() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [pokemon, setPokemon] = useState([]);
-  const [gotcha, setGotcha] = useState([])
+  const [gotcha, setGotcha] = useState("https://pokeapi.co/api/v2/pokemon/7")
   const [pokeBall, setPokeBall] = useState([])
-
-  // gotcha is the container for the url that after the fetch will fill the setPokeball
-      // const gotcha = () => {
-    //   console.log()
-    //   fetch(pokemon.url)
-    //     .then(res => res.json())
-    //     .then(
-    //       (ball) => {
-    //         setPokeBall(ball)
-    //       }
-    //     )
-    // }
 
   // Note: the empty deps array [] means
   // this useEffect will run once
@@ -47,10 +35,20 @@ function App() {
         })
   }, [])
 
-  // useEffect(() => {
-  //   console.log(gotcha,"captured url for pokeball")
-  // }, gotcha)
-
+  useEffect(() => {
+    fetch(gotcha)
+      .then(res => res.json())
+      .then(
+        (result) => {
+          setIsLoaded(true);
+          setPokeBall(result);
+        }
+      ).catch(
+        (error) => {
+          setIsLoaded(true);
+          setError(error);
+        })
+  }, [gotcha])
 
 
   if (error) {
@@ -60,15 +58,17 @@ function App() {
   } else {
     return (
       <Container>
-        {console.log(pokemon, "first data request, APP")}
+        {/* {console.log(pokemon, "first data request, APP")} */}
         <Header />
         <Row className="justify-content-md-center">
           <Col>
               <InfoView pokeBall={pokeBall}/>
           </Col>
-          <Col className='gallery'><Gallery pokemon={pokemon.results} setGotcha={setGotcha} /></Col>
+          <Col className='gallery'>
+            <Gallery pokemon={pokemon.results} setGotcha={setGotcha} />
+          </Col>
         </Row>
-        <NavBar />     
+        <NavBar next={pokemon.next} />     
       </Container>      
     );
   }

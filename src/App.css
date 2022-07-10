@@ -8,3 +8,6 @@ body {
   display: flex;
   flex-wrap: wrap;
 }
+h2 {
+  text-transform: capitalize;
+}
