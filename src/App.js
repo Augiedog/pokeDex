@@ -14,7 +14,7 @@ function App() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [pokemon, setPokemon] = useState([]);
-  const [gotcha, setGotcha] = useState("https://pokeapi.co/api/v2/pokemon/7")
+  const [gotcha, setGotcha] = useState("https://pokeapi.co/api/v2/pokemon/132")
   const [pokeBall, setPokeBall] = useState([])
 
   // Note: the empty deps array [] means
