@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-
+ 
 import Header from './Component/Header';
 import NavBar from './Component/NavBar'
 import Gallery from './Component/Gallery';
@@ -14,14 +14,15 @@ function App() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [pokemon, setPokemon] = useState([]);
-  const [gotcha, setGotcha] = useState("https://pokeapi.co/api/v2/pokemon/132")
+  const [gotcha, setGotcha] = useState("https://pokeapi.co/api/v2/pokemon/94")
   const [pokeBall, setPokeBall] = useState([])
+  const [twenty, setTwenty] = useState("https://pokeapi.co/api/v2/pokemon/")
 
   // Note: the empty deps array [] means
   // this useEffect will run once
   // similar to componentDidMount()
   useEffect(() => {
-    fetch("https://pokeapi.co/api/v2/pokemon/")
+    fetch(twenty)
       .then(res => res.json())
       .then(
         (result) => {
@@ -33,7 +34,7 @@ function App() {
           setIsLoaded(true);
           setError(error);
         })
-  }, [])
+  }, [twenty])
 
   useEffect(() => {
     fetch(gotcha)
@@ -68,7 +69,8 @@ function App() {
             <Gallery pokemon={pokemon.results} setGotcha={setGotcha} />
           </Col>
         </Row>
-        <NavBar next={pokemon.next} />     
+        
+        <NavBar next={pokemon.next} previous={pokemon.previous} index={setTwenty} />     
       </Container>      
     );
   }

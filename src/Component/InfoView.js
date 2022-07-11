@@ -1,11 +1,8 @@
 import Card from 'react-bootstrap/Card'
-import { useContext } from 'react'
-import { PokeBall } from '../context/PokeBall'
 
 
 function InfoView(props) {
     
-    console.log(props, 'infoView')
     return (
         <>
             <Card style={{ width: '95%' }}>
