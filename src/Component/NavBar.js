@@ -23,8 +23,8 @@ function NavBar(props) {
                     </Nav>
                 </Navbar.Collapse>
                 <Nav>
-                    <Button onClick={(e) => props.index(props.next)} >Next</Button>
-                    <Button onClick={(e) => props.index(props.previous)}>Previous</Button>
+                    <Button variant="success" onClick={(e) => props.index(props.next)} >Next</Button>
+                    <Button variant="success" onClick={(e) => props.index(props.previous)}>Previous</Button>
                 </Nav>
             </Container>
         </Navbar>
