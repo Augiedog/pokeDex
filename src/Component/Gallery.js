@@ -1,4 +1,3 @@
-import { useState } from 'react'
 
 function Gallery(props) {
     const pokemon = props.pokemon
@@ -19,7 +18,7 @@ function Gallery(props) {
         <>
             {pokemon.map((item, index) => (
               <div key={index} style={boxedStyle} onClick={(e) => props.setGotcha(item.url)} >
-                <h5>{item.name}</h5> 
+                <h5>{item.name}</h5>
               </div>
             ))}
         </>

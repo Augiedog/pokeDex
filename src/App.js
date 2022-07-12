@@ -13,11 +13,13 @@ import Col from 'react-bootstrap/esm/Col';
 function App() {
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
-  const [pokemon, setPokemon] = useState([]);
-  const [gotcha, setGotcha] = useState("https://pokeapi.co/api/v2/pokemon/94")
-  const [pokeBall, setPokeBall] = useState([])
+  const [gotcha, setGotcha] = useState("https://pokeapi.co/api/v2/pokemon/302")
+  const [emall, setEmall] = useState("https://pokeapi.co/api/v2/pokemon-species/302")
   const [twenty, setTwenty] = useState("https://pokeapi.co/api/v2/pokemon/")
-
+  const [pokemon, setPokemon] = useState([]);
+  const [pokeBall, setPokeBall] = useState([])
+  const [species, setSpecies] =useState([])
+  
   // Note: the empty deps array [] means
   // this useEffect will run once
   // similar to componentDidMount()
@@ -43,14 +45,29 @@ function App() {
         (result) => {
           setIsLoaded(true);
           setPokeBall(result);
+          setEmall(result.species.url)
         }
       ).catch(
         (error) => {
           setIsLoaded(true);
           setError(error);
         })
-  }, [gotcha])
+  }, [gotcha])  
 
+  useEffect(() => {
+    fetch(emall)
+      .then(res => res.json())
+      .then(
+        (result) => {
+          setIsLoaded(true);
+          setSpecies(result);
+        }
+      ).catch(
+        (error) => {
+          setIsLoaded(true);
+          setError(error);
+        })
+  }, [emall])
 
   if (error) {
     return <div>Error: {error.message}</div>;
@@ -63,7 +80,7 @@ function App() {
         <Header />
         <Row className="justify-content-md-center">
           <Col>
-              <InfoView pokeBall={pokeBall}/>
+              <InfoView pokeBall={pokeBall} species={species} />
           </Col>
           <Col className='gallery'>
             <Gallery pokemon={pokemon.results} setGotcha={setGotcha} />
