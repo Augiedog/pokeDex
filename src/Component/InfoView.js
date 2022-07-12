@@ -17,9 +17,9 @@ function InfoView(props) {
                         {props.species.flavor_text_entries[7].flavor_text}
                         {props.species.flavor_text_entries[8].flavor_text}                       
                     </Card.Text>
-                    <Card.Text> Height={props.pokeBall.height}, Weight={props.pokeBall.weight}, {props.species.generation.name}</Card.Text>
+                    <Card.Text> Height={props.pokeBall.height}, Weight={props.pokeBall.weight}</Card.Text>
                     <Card.Text>
-                        Evolved from {props.species.evolves_from_species.name}
+                        Evolved from 
                     </Card.Text>
                     <Card.Text>
                         Moves
