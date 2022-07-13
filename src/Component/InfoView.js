@@ -1,4 +1,6 @@
 import Card from 'react-bootstrap/Card'
+import Row from 'react-bootstrap/esm/Row';
+import Col from 'react-bootstrap/esm/Col';
 
 
 function InfoView(props) {
@@ -6,7 +8,15 @@ function InfoView(props) {
     return (
         <>
             <Card style={{ width: '95%' }}>
-                <Card.Img style={{ width: '250px'}} variant="top" src={props.pokeBall.sprites.front_default} />
+                <Row className="justify-content-md-center">
+                    <Col>
+                        <Card.Img style={{ width: '230px'}} variant="top" src={props.pokeBall.sprites.front_default} />
+                    </Col>
+                    <Col>
+                        <Card.Img style={{ width: '230px'}} variant="top" src={props.pokeBall.sprites.back_default} />
+                    </Col>
+                </Row>
+                
                 <Card.Body>
                     <Card.Title><h2>{props.pokeBall.name}  </h2></Card.Title>
                     <Card.Text>
