@@ -1,6 +1,6 @@
 
 function Gallery(props) {
-    const pokemon = props.pokemon
+    
    
     const boxedStyle = {
         'width': '20%',
@@ -16,7 +16,7 @@ function Gallery(props) {
     
     return (
         <>
-            {pokemon.map((item, index) => (
+            {props.pokemon.map((item, index) => (
               <div key={index} style={boxedStyle} onClick={(e) => props.setGotcha(item.url)} >
                 <h5>{item.name}</h5>
               </div>

@@ -8,7 +8,7 @@ function NavBar(props) {
     return (
         <Navbar bg="dark" variant='dark' expand="md" fixed='bottom' >
             <Container>
-                <Navbar.Brand href="/">
+                <Navbar.Brand href="https://pokeapi.co/" target="_blank" >
                     <img 
                         src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png"
                         alt="PokéAPI logo" 
@@ -19,7 +19,7 @@ function NavBar(props) {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
                         <Nav.Link href="/">Home</Nav.Link>
-                        <Nav.Link href="/about">About</Nav.Link>                    
+                        <Nav.Link href="https://github.com/Augiedog/pokeDex#pokedex" target={"_blank"}>About</Nav.Link>                    
                     </Nav>
                 </Navbar.Collapse>
                 <Nav>
