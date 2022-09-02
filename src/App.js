@@ -33,7 +33,6 @@ function App() {
         }
       ).catch(
         (error) => {
-          setIsLoaded(true);
           setError(error);
         })
   }, [twenty])
@@ -49,7 +48,6 @@ function App() {
         }
       ).catch(
         (error) => {
-          setIsLoaded(true);
           setError(error);
         })
   }, [gotcha])  
@@ -64,7 +62,6 @@ function App() {
         }
       ).catch(
         (error) => {
-          setIsLoaded(true);
           setError(error);
         })
   }, [emall])
@@ -72,7 +69,7 @@ function App() {
   if (error) {
     return <div>Error: {error.message}</div>;
   } else if (!isLoaded) {
-    return <div>Loading...</div>;
+    return <div className='App'><h1>Loading...</h1></div>;
   } else {
     return (
       <Container>
