@@ -33,7 +33,7 @@ function App() {
         }
       ).catch(
         (error) => {
-         setIsloaded(false);
+         setIsLoaded(false);
          setError(error);
         })
   }, [twenty])
@@ -49,7 +49,7 @@ function App() {
         }
       ).catch(
         (error) => {
-         setIsloaded(false);
+         setIsLoaded(false);
          setError(error);
         })
   }, [gotcha])  
@@ -64,7 +64,7 @@ function App() {
         }
       ).catch(
         (error) => {
-         setIsloaded(false);
+         setIsLoaded(false);
          setError(error);
         })
   }, [emall])
