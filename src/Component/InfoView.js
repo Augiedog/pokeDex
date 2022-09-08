@@ -20,9 +20,9 @@ function InfoView(props) {
                 <Card.Body>
                     <Card.Title><h2>{props.pokeBall.name}  </h2></Card.Title>
                     <Card.Text>
-                        {props.species.flavor_text_entries[0].flavor_text} 
-                        {props.species.flavor_text_entries[1].flavor_text}
-                        {props.species.flavor_text_entries[4].flavor_text}                     
+                        {props.species.flavor_text_entries[0].flavor_text}
+                        {props.species.flavor_text_entries[6].flavor_text}
+                        {props.species.flavor_text_entries[9].flavor_text}    
                     </Card.Text>
                     <Card.Text> Height={props.pokeBall.height}, Weight={props.pokeBall.weight}</Card.Text>
                     <Card.Text>
