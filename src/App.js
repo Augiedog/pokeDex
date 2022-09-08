@@ -11,14 +11,14 @@ import Col from 'react-bootstrap/esm/Col';
 
 
 function App() {
-  const [error, setError] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [gotcha, setGotcha] = useState("https://pokeapi.co/api/v2/pokemon/132")
-  const [emall, setEmall] = useState("https://pokeapi.co/api/v2/pokemon-species/132")
+  const [emall, setEmall] = useState("https://pokeapi.co/api/v2/pokemon-species/132")  
+  const [ketch, setKetch] = useState("https://pokeapi.co/api/v2/pokemon/132")  
   const [twenty, setTwenty] = useState("https://pokeapi.co/api/v2/pokemon/")
-  const [pokemon, setPokemon] = useState([]);
+  const [pokemon, setPokemon] = useState([])
   const [pokeBall, setPokeBall] = useState([])
   const [species, setSpecies] =useState([])
+  const [error, setError] = useState(null)
+  const [isLoaded, setIsLoaded] = useState(false)
   
   // Note: the empty deps array [] means
   // this useEffect will run once
@@ -39,7 +39,7 @@ function App() {
   }, [twenty])
 
   useEffect(() => {
-    fetch(gotcha)
+    fetch(ketch)
       .then(res => res.json())
       .then(
         (result) => {
@@ -52,7 +52,7 @@ function App() {
          setIsLoaded(false);
          setError(error);
         })
-  }, [gotcha])  
+  }, [ketch])  
 
   useEffect(() => {
     fetch(emall)
@@ -67,7 +67,7 @@ function App() {
          setIsLoaded(false);
          setError(error);
         })
-  }, [emall])
+  }, [emall, ketch])
 
   if (error) {
     return <div>Error: {error.message}</div>;
@@ -76,14 +76,13 @@ function App() {
   } else {
     return (
       <Container>
-        {/* {console.log(pokemon, "first data request, APP")} */}
         <Header />
         <Row className="justify-content-md-center">
           <Col>
               <InfoView pokeBall={pokeBall} species={species} />
           </Col>
           <Col className='gallery'>
-            <Gallery pokemon={pokemon.results} setGotcha={setGotcha} />
+            <Gallery pokemon={pokemon.results} setKetch={setKetch} />
           </Col>
         </Row>
         

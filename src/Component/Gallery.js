@@ -17,7 +17,7 @@ function Gallery(props) {
     return (
         <>
             {props.pokemon.map((item, index) => (
-              <div key={index} style={boxedStyle} onClick={(e) => props.setGotcha(item.url)} >
+              <div key={index} style={boxedStyle} onClick={(e) => props.setKetch(item.url)} >
                 <h5>{item.name}</h5>
               </div>
             ))}
