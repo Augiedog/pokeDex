@@ -2,7 +2,7 @@
 function Header() {
     return (
         <>
-            <h1>PokeDex</h1>
+            <h1 className="pokemonFont">PokeDex</h1>
         </>
         
     )

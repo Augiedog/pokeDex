@@ -18,7 +18,7 @@ function InfoView(props) {
                 </Row>
                 
                 <Card.Body>
-                    <Card.Title><h2>{props.pokeBall.name}  </h2></Card.Title>
+                    <Card.Title><h2 className='pokemonFont'>{props.pokeBall.name}  </h2></Card.Title>
                     <Card.Text>
                         {props.species.flavor_text_entries[0].flavor_text}
                         {props.species.flavor_text_entries[6].flavor_text}

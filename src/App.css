@@ -12,6 +12,10 @@ body {
   display: flex;
   flex-wrap: wrap;
 }
+h1 {
+  font: size 50px;
+}
 h2 {
   text-transform: capitalize;
+  font: size 28px;
 }
