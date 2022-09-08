@@ -4,7 +4,7 @@ import Col from 'react-bootstrap/esm/Col';
 
 
 function InfoView(props) {
-    console.log(props,"right here")
+    // console.log(props,"right here")
     return (
         <>
             <Card style={{ width: '95%' }}>

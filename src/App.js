@@ -11,12 +11,12 @@ import Col from 'react-bootstrap/esm/Col';
 
 
 function App() {
-  const [error, setError] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(false);
+  const [error, setError] = useState(null)
+  const [isLoaded, setIsLoaded] = useState(false)
   const [gotcha, setGotcha] = useState("https://pokeapi.co/api/v2/pokemon/132")
   const [emall, setEmall] = useState("https://pokeapi.co/api/v2/pokemon-species/132")
   const [twenty, setTwenty] = useState("https://pokeapi.co/api/v2/pokemon/")
-  const [pokemon, setPokemon] = useState([]);
+  const [pokemon, setPokemon] = useState([])
   const [pokeBall, setPokeBall] = useState([])
   const [species, setSpecies] = useState([])
 
