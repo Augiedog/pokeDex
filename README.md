@@ -6,9 +6,10 @@ and thank you for taking intrest in how it's made
 
 ## Welcome to PokeDex
 
-PokeDex is hosted thru heroku, please
+[PokeDex](https://monster-dex.herokuapp.com/) is hosted thru heroku, please
 check it out
-[PokeDex](https://monster-dex.herokuapp.com/)
+
 
 **Known issues**
-The first load of the page may not work, Once up runs great
+May not collect all resources before attempting to mount. 
+> If all you see is red screen click refresh button
