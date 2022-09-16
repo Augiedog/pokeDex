@@ -1,9 +1,9 @@
 
-function About() {
+function Stats() {
     return (
         <>
             <h1>About</h1>
         </>
     )
 }
-export default About
+export default Stats
