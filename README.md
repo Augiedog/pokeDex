@@ -16,5 +16,5 @@ check it out
 May not collect all resources before attempting to mount. 
 > If all you see is red screen click refresh button
 example of app once up
-[![landingPage][product-screenshot]](./public/landing.png)
+![landingPage][product-screenshot]](./public/landing.png)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
