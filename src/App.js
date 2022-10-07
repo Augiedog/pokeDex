@@ -24,49 +24,77 @@ function App() {
   // this useEffect will run once
   // similar to componentDidMount()
   useEffect(() => {
-    fetch(twenty)
-      .then(res => res.json())
-      .then(
-        (result) => {
-          setIsLoaded(true);
-          setPokemon(result);
-        }
-      ).catch(
-        (error) => {
-         setIsLoaded(false);
-         setError(error);
-        })
+    fetch(twenty).then( async res => {
+      try {
+        const data = await res.json()
+        setIsLoaded(true)
+        setPokemon(data)
+      } catch (error) {
+        setIsLoaded(false)
+        setError(error)
+      }
+    })
+      // .then(res => res.json())
+      // .then(
+      //   (result) => {
+      //     setIsLoaded(true);
+      //     setPokemon(result);
+      //   }
+      // ).catch(
+      //   (error) => {
+      //    setIsLoaded(false);
+      //    setError(error);
+      //   })
   }, [twenty])
 
   useEffect(() => {
-    fetch(ketch)
-      .then(res => res.json())
-      .then(
-        (result) => {
-          setIsLoaded(true);
-          setPokeBall(result);
-          setEmall(result.species.url)
-        }
-      ).catch(
-        (error) => {
-         setIsLoaded(false);
-         setError(error);
-        })
+    fetch(ketch).then( async res => {
+      try {
+        const data = await res.json()
+        setIsLoaded(true)
+        setPokeBall(data)
+        setEmall(data.species.url)
+      } catch (error) {
+        setIsLoaded(false)
+        setError(error)
+      }
+    })
+      // .then(res => res.json())
+      // .then(
+      //   (result) => {
+      //     setIsLoaded(true);
+      //     setPokeBall(result);
+      //     setEmall(result.species.url)
+      //   }
+      // ).catch(
+      //   (error) => {
+      //    setIsLoaded(false);
+      //    setError(error);
+      //   })
   }, [ketch])  
 
   useEffect(() => {
-    fetch(emall)
-      .then(res => res.json())
-      .then(
-        (result) => {
-          setIsLoaded(true);
-          setSpecies(result);
-        }
-      ).catch(
-        (error) => {
-         setIsLoaded(false);
-         setError(error);
-        })
+    fetch(emall).then( async res => {
+      try {
+        const data = await res.json()
+        setIsLoaded(true)
+        setSpecies(data)
+      } catch (error) {
+        setIsLoaded(false)
+        setError(error)
+      }
+    })
+      // .then(res => res.json())
+      // .then(
+      //   (result) => {
+      //     setIsLoaded(true);
+      //     setSpecies(result);
+      //   }
+      // ).catch(
+      //   (error) => {
+      //    setIsLoaded(false);
+      //    setError(error);
+      //   })
   }, [emall, ketch])
 
   if (error) {
