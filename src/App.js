@@ -34,17 +34,6 @@ function App() {
         setError(error)
       }
     })
-      // .then(res => res.json())
-      // .then(
-      //   (result) => {
-      //     setIsLoaded(true);
-      //     setPokemon(result);
-      //   }
-      // ).catch(
-      //   (error) => {
-      //    setIsLoaded(false);
-      //    setError(error);
-      //   })
   }, [twenty])
 
   useEffect(() => {
@@ -58,19 +47,7 @@ function App() {
         setIsLoaded(false)
         setError(error)
       }
-    })
-      // .then(res => res.json())
-      // .then(
-      //   (result) => {
-      //     setIsLoaded(true);
-      //     setPokeBall(result);
-      //     setEmall(result.species.url)
-      //   }
-      // ).catch(
-      //   (error) => {
-      //    setIsLoaded(false);
-      //    setError(error);
-      //   })
+    })     
   }, [ketch])  
 
   useEffect(() => {
@@ -84,18 +61,7 @@ function App() {
         setError(error)
       }
     })
-      // .then(res => res.json())
-      // .then(
-      //   (result) => {
-      //     setIsLoaded(true);
-      //     setSpecies(result);
-      //   }
-      // ).catch(
-      //   (error) => {
-      //    setIsLoaded(false);
-      //    setError(error);
-      //   })
-  }, [emall, ketch])
+  }, [emall])
 
   if (error) {
     return <div>Error: {error.message}</div>;
