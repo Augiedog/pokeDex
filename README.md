@@ -4,7 +4,7 @@ I built this App to as a fun project with React JS.
 the data is powered from PokeAPI 'thank you for the free use!' hope you have fun using the app
 and thank you for taking intrest in how it's made
 
-<p align="center">you can <a href="https://monster-dex.herokuapp.com/" target="_blank"><b>Play</b></a> the Game here</p>
+<p align="center">you can <a href="https://brilliant-kashata-df6660.netlify.app/" target="_blank"><b>Play</b></a> the Game here</p>
 
 ## Welcome to PokeDex
 
