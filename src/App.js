@@ -66,7 +66,7 @@ function App() {
     })
   }, [emall])
 
-  if (tewntyIsLoad, emallIsLoad, ketchIsLoad === true) {
+  if (tewntyIsLoad && emallIsLoad && ketchIsLoad === true) {
     setIsLoaded(true)
   }
 
